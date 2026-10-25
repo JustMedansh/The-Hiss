@@ -15,7 +15,7 @@
           "channel": 0
         }
       ],
-      "code": "#define PI 3.14159265\n\nfloat hash(vec2 p)\n{\n    return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);\n}\n\nfloat noise(vec2 p)\n{\n    vec2 i = floor(p);\n    vec2 f = fract(p);\n\n    f = f * f * (3.0 - 2.0 * f);\n\n    float a = hash(i);\n}",
+      "code": "#define PI 3.14159265\n\nfloat hash(vec2 p)\n{\n    return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);\n}\n\nfloat noise(vec2 p)\n{\n    vec2 i = floor(p);\n    vec2 f = fract(p);\n\n    f = f * f * (3.0 - 2.0 * f);\n\n    float a = hash(i);\n    float b = hash(i + vec2(1.0, 0.0));\n    float c = hash(i + vec2(0.0, 1.0));\n    float d = hash(i + vec2(1.0, 1.0));\n\n    return mix(\n        mix(a, b, f.x),\n        mix()\n    )\n}",
       "name": "Image",
       "description": "",
       "type": "image"
