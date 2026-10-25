@@ -2,8 +2,8 @@
   "ver": "0.1",
   "info": {
     "id": "",
-    "name": "",
-    "description": "",
+    "name": "The Hiss",
+    "description": "My recreation of the Hiss from the game Control by Remedy Entertainment",
     "tags": []
   },
   "renderpass": [
