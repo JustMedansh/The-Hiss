@@ -2,6 +2,12 @@
 // mainImage runs once for each pixel, every frame.
 // Try changing a number, then watch the preview on the right.
 
+
+float hash(vec2 p) {
+    return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
+}
+
+
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
     vec2 uv = fragCoord / iResolution.xy;
