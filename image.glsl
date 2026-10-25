@@ -19,6 +19,7 @@ float noise(vec2 p)
 
     return mix(
         mix(a, b, f.x),
-        mix()
-    )
+        mix(c, d, f.x),
+        f.y
+    );
 }
