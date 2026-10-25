@@ -15,7 +15,7 @@
           "channel": 0
         }
       ],
-      "code": "float hash(vec2 p) {\n    return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);\n}\n\n\nvoid mainImage( out vec4 fragColor, in vec2 fragCoord )\n{\n    vec2 uv = fragCoord / iResolution.xy;\n\n    vec2 p = fragCoord / 20.0;\n    float pattern = hash(floor(p));\n    float blend = smoothstep(0.0, 1.0, fract(p.x));\n\n    float left = hash(floor(p));\n    float right = hash(floor(p) + vec2(1.0, 0.0));\n    float bottom = hash(floor(p) + vec2(0.0, 1.0));\n    float top = hash(floor(p) + vec2(1.0, 1.0));\n\n    float wobble = sin(fragCoord.y * 0.03 + iTime * 2.0) * 3.0;\n    // float brightness = 0.5 + 0.5 * sin(iTime + (fragCoord.x * 0.02) + wobble + sin(fragCoord.y * 0.01));\n    float brightness = mix(left, right, blend, top, bottom);\n    vec3 col = vec3(0.6, 0.0, 0.0) * brightness;\n\n    fragColor = vec4(col, 1.0);\n}\n",
+      "code": "",
       "name": "Image",
       "description": "",
       "type": "image"
