@@ -15,7 +15,7 @@
           "channel": 0
         }
       ],
-      "code": "// Welcome! This is a Shadertoy-style shader.\n// mainImage runs once for each pixel, every frame.\n// Try changing a number, then watch the preview on the right.\n\nvoid mainImage( out vec4 fragColor, in vec2 fragCoord )\n{\n    // Pixel position, from 0 to 1 across the screen.\n    vec2 uv = fragCoord / iResolution.xy;\n\n    // A colour that shifts over time.\n    // vec3 col = 0.5 + 0.5 * cos(iTime + uv.xyx + vec3(0.0, 2.0, 4.0));\n    float brightness = 0.5 + 0.5 * sin(iTime + fragCoord.x * 0.02);\n    vec3 col = vec3(0.6, 0.0, 0.0) * brightness;\n\n    // A soft circle in the middle that follows the mouse while you hold a button.\n\n    fragColor = vec4(col, 1.0);\n}\n",
+      "code": "// Welcome! This is a Shadertoy-style shader.\n// mainImage runs once for each pixel, every frame.\n// Try changing a number, then watch the preview on the right.\n\nvoid mainImage( out vec4 fragColor, in vec2 fragCoord )\n{\n    vec2 uv = fragCoord / iResolution.xy;\n\n    float brightness = 0.5 + 0.5 * sin(iTime + fragCoord.x * 0.02 + sin(fragCoord.y * 0.01));\n    vec3 col = vec3(0.6, 0.0, 0.0) * brightness;\n\n    fragColor = vec4(col, 1.0);\n}\n",
       "name": "Image",
       "description": "",
       "type": "image"
