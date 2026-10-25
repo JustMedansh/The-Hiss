@@ -15,7 +15,7 @@
           "channel": 0
         }
       ],
-      "code": "",
+      "code": "#define PI 3.\n\nfloat hash(vec2 p)\n{\n    return fract(sin(dot(p, vec2(127.1, 311.7)) * 43758.5453);\n}\n\n",
       "name": "Image",
       "description": "",
       "type": "image"
